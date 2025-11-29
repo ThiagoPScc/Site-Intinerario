@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com"> <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+
+  <title>Inclusão e tecnologia</title>
+  <style>
+    *{ padding: 0; margin: 0; }
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #8d8d8d;
+    }
+
+    header {
+      background: #222;
+      color: #fff;
+      padding: 1rem;
+      text-align: center;
+      height: 75px;
+    }
+    p{ font-family: "PT Serif", serif; 
+    font-weight: 400; 
+    font-style: normal;
+}
+    h2{ font-family: "Oswald", sans-serif; 
+    font-optical-sizing: auto; 
+    font-weight: weight; 
+    font-style: normal; 
+    font-size: 2em; 
+    margin-bottom: 20px; }
+
+    #cont{
+        background-color: #fff;
+        width: 1600px;
+        margin: 0 auto;
+    }
+
+    /* Carrossel */
+    .carousel {
+      position: relative;
+      width: 100%;
+      
+      margin: 0 auto;
+      overflow: hidden;
+    
+    }
+
+    .carousel img {
+      width: 100%;
+      display: none;
+    }
+
+    .carousel img.active {
+      display: block;
+    }
+
+    /* Texto */
+    .texto {
+      max-width: 1370px;
+      margin: 2rem auto;
+      padding: 1rem;
+      border-radius: 10px;
+    }
+
+    /* Cards */
+    .cards-container {
+      max-width: 1450px;
+      margin:  auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 1.5rem;
+      padding: 1rem;
+    }
+
+    .card {
+      background: #fff;
+      padding: 1rem;
+      border-radius: 10px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+
+    .card img {
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    .card button {
+      margin-top: 1rem;
+      padding: 0.5rem 1rem;
+      background: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .card button:hover {
+      background: #0056b3;
+    }
+  .menu-btn {
+      padding: 0.5rem 1rem;
+      background: #444;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .menu-btn:hover {
+      background: #666;
+    }
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+  .header-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .header-left {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .header-right {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .logo {
+      border-radius: 5px;
+    }
+
+    .menu-btn {
+      padding: 0.5rem 1rem;
+      background: #444;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .menu-btn:hover {
+      background: #666;
+    }
+
+    .link-btn {
+      text-decoration: none;
+      color: white;
+      display: inline-block;
+    }
+
+    .dropdown {
+      position: relative;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      right: 0;
+      background: white;
+      border-radius: 5px;
+      padding: 5px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+    body.dark {
+      background: #121212;
+      color: #e0e0e0;
+    }
+
+    body.dark .card {
+      background: #1e1e1e;
+      color: #fff;
+    }
+
+     body.dark .texto{
+      color: #fff;
+    }
+
+
+    body.dark header {
+      background: #000;
+    }
+
+    body.dark .menu-btn {
+      background: #333;
+      color: #fff;
+    }
+
+    body.dark .menu-btn:hover {
+      background: #555;
+    }
+    body.dark #cont{
+        background-color: #333;
+    }
+
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-container">
+      <div class="header-left">
+        <img src="https://picsum.photos/50" alt="Logo" class="logo" />
+        <h1>Inclusão e tecnologia</h1>
+      </div>
+
+      <div class="header-right">
+        <div class="dropdown">
+          <button class="menu-btn">Tamanho Fonte</button>
+          <div class="dropdown-content">
+            <button onclick="mudarFonte(1)">Pequena</button>
+            <button onclick="mudarFonte(2)">Média</button>
+            <button onclick="mudarFonte(3)">Grande</button>
+          </div>
+        </div>
+
+        <button onclick="toggleDarkMode()" class="menu-btn">Modo Escuro</button>
+
+        <a href="https://forms.gle/TRDfSQQNTsBEixcR6" target="_blank" class="menu-btn link-btn">Avalie o site</a>
+      </div>
+    </div>
+  </header>
+
+  <div id="cont">
+        <!-- Carrossel -->
+        <div class="carousel">
+            <img alt="txt1" src="https://picsum.photos/800/300?random=1" class="active" />
+            <img alt="txt2" src="https://picsum.photos/800/300?random=2" />
+            <img alt="txt3" src="https://picsum.photos/800/300?random=3" />
+        </div>
+
+        <!-- Texto -->
+    
+        <div class="texto">
+            
+            <h2>Texto Descritivo</h2>
+            <p> nós acreditamos que a tecnologia deve ser acessível para todos, 
+                independentemente da idade, experiência ou limitações. 
+                Muitas pessoas usam computadores e celulares apenas para redes sociais, 
+                mas ficam inseguras quando precisam realizar tarefas básicas, como editar uma imagem, 
+                aumentar a fonte de um site ou organizar arquivos no Windows. 
+                Nosso objetivo é ajudar justamente esse público, oferecendo explicações claras,
+                diretas e gratuitas.<br> Para isso, criamos um conjunto de materiais fáceis de entender: 
+                tutoriais em PDF, cartazes informativos e um site com guias rápidos sobre as tarefas 
+                digitais mais comuns. Tudo foi pensado para facilitar a vida de quem está começando ou de quem 
+                precisa de recursos simples para produzir textos, imagens, pesquisas e documentos
+                sem depender de aplicativos pagos. Nossa missão é tornar o uso da tecnologia mais leve,
+                acessível e possível para todos. </p>
+        </div>
+        <hr>
+
+        <!-- Cards -->
+        <section class="cards-container"> <div class="card">
+            <img src="https://picsum.photos/300/200?random=11" />
+            <h3>Copiar e Colcar</h3>
+            <p>Aprenda a copiar e colar textos, imagens e links no navegador com o computador.</p>
+            <hr> 
+            <label for="btn1">Clique no botão para abrir o pdf</label><br> 
+            <button name="btn1"onclick="abrirPDF('Copiar e Colar.pdf')">Abrir PDF</button></div> 
+
+
+            <div class="card"> <img src="https://picsum.photos/300/200?random=12" />
+            <h3>Aumentar o tamanho da letra</h3>
+            <p>Aprenda a aumentar o tamanho da fonte dos sites, documentos e texto para poder facilitar a leitura.</p><hr>
+            <label for="btn2">Clique no botão para abrir o pdf</label><br> 
+            <button name="btn2"onclick="abrirPDF('Como Aumentar o Tamanho da Letra.pdf')">Abrir PDF</button> </div>
+            
+            <div class="card"> <img src="https://picsum.photos/300/200?random=13" />
+            <h3>Card 3</h3>
+            <p>Mais uma descrição.</p><hr>
+            <label for="btn3">Clique no botão para abrir o pdf</label><br>
+            <button name="btn3"onclick="abrirPDF('arquivo3.pdf')">Abrir PDF</button> </div>
+            
+            <div class="card"> <img src="https://picsum.photos/300/200?random=14" />
+            <h3>Card 4</h3>
+            <p>Mais uma descrição.</p><hr>
+            <label for="btn4">Clique no botão para abrir o pdf</label><br>
+            <button name="btn4"onclick="abrirPDF('arquivo4.pdf')">Abrir PDF</button> </div> 
+            <div class="card"> <img src="https://picsum.photos/300/200?random=15" />
+            <h3>Card 5</h3> 
+            <p>Mais uma descrição.</p><hr> 
+            <label for="btn5">Clique no botão para abrir o pdf</label><br> 
+            <button name="btn5" onclick="abrirPDF('arquivo5.pdf')">Abrir PDF</button> </div>
+
+            <div class="card"> <img src="https://picsum.photos/300/200?random=15" /> 
+            <h3>Card 6</h3> 
+            <p>Mais uma descrição.</p><hr> 
+            <label for="btn6">Clique no botão para abrir o pdf</label><br> 
+            <button name="btn6" onclick="abrirPDF('arquivo6.pdf')">Abrir PDF</button> </div>
+        </section>
+    </div>
+  <script>
+    // Carrossel automático
+    let index = 0;
+    const imagens = document.querySelectorAll('.carousel img');
+
+    function trocarImagem() {
+      imagens[index].classList.remove('active');
+      index = (index + 1) % imagens.length;
+      imagens[index].classList.add('active');
+    }
+
+    setInterval(trocarImagem, 3000);
+
+    // Abrir PDF
+    function abrirPDF(caminho) {
+      window.open(caminho, '_blank');
+    }
+    // Controle de tamanho de fonte
+    function mudarFonte(nivel) {
+      let tamanho;
+      if (nivel === 1) tamanho = '14px';
+      else if (nivel === 2) tamanho = '18px';
+      else tamanho = '22px';
+
+      document.querySelectorAll('h2').forEach(e => e.style.fontSize = tamanho);
+      document.querySelectorAll('p').forEach(e => e.style.fontSize = tamanho);
+      document.querySelectorAll('label').forEach(e => e.style.fontSize = tamanho);
+    }
+
+    // Modo escuro com salvamento
+    function aplicarTemaSalvo() {
+      const tema = localStorage.getItem('tema');
+      if (tema === 'dark') document.body.classList.add('dark');
+    }
+
+    function toggleDarkMode() {
+      document.body.classList.toggle('dark');
+      const modo = document.body.classList.contains('dark') ? 'dark' : 'light';
+      localStorage.setItem('tema', modo);
+    }
+
+    aplicarTemaSalvo();
+</script>
+</body>
+</html>
