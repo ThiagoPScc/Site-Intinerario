@@ -35,7 +35,7 @@
 
     #cont{
         background-color: #fff;
-        width: 1600px;
+        width: 1300px;
         margin: 0 auto;
     }
 
@@ -43,7 +43,6 @@
     .carousel {
       position: relative;
       width: 100%;
-      
       margin: 0 auto;
       overflow: hidden;
     
@@ -77,7 +76,7 @@
     }
 
     .card {
-      background: #fff;
+      background: #dadada;
       padding: 1rem;
       border-radius: 10px;
       box-shadow: 0 2px 4px rgba(0,0,0,0.1);
@@ -170,7 +169,13 @@
       padding: 5px;
       box-shadow: 0 2px 4px rgba(0,0,0,0.2);
     }
+    #manuais{
+      background-color: #bebebe;
+    }
 
+    body.dark #manuais{
+      background-color: #1f1f1f;
+    }
     .dropdown:hover .dropdown-content {
       display: block;
     }
@@ -204,6 +209,9 @@
     body.dark #cont{
         background-color: #333;
     }
+    .logo{
+      width: 200px;
+    }
 
   </style>
 </head>
@@ -211,7 +219,7 @@
   <header>
     <div class="header-container">
       <div class="header-left">
-        <img src="https://picsum.photos/50" alt="Logo" class="logo" />
+        <img class="logo" src="logo.jpg" alt="Logo" class="logo" />
         <h1>Inclusão e tecnologia</h1>
       </div>
 
@@ -235,16 +243,15 @@
   <div id="cont">
         <!-- Carrossel -->
         <div class="carousel">
-            <img alt="txt1" src="https://picsum.photos/800/300?random=1" class="active" />
-            <img alt="txt2" src="https://picsum.photos/800/300?random=2" />
-            <img alt="txt3" src="https://picsum.photos/800/300?random=3" />
+            <img alt="txt1" src="Frame 3.png" class="active" />
+            <img alt="txt2" src="Frame 4.png" />
         </div>
 
         <!-- Texto -->
     
         <div class="texto">
             
-            <h2>Texto Descritivo</h2>
+            <h2>Nosso projeto</h2>
             <p> nós acreditamos que a tecnologia deve ser acessível para todos, 
                 independentemente da idade, experiência ou limitações. 
                 Muitas pessoas usam computadores e celulares apenas para redes sociais, 
@@ -259,10 +266,13 @@
                 acessível e possível para todos. </p>
         </div>
         <hr>
-
+        <div class="texto">
+          <h2>Guias rápidos de informática</h2>
+          <p>Veja aqui pdfs simples com 1 página que podem te auxiliar com problemas simples de informática.</p>
+        </div>
         <!-- Cards -->
         <section class="cards-container"> <div class="card">
-            <img src="https://picsum.photos/300/200?random=11" />
+            <img src="fotoWindows.PNG" />
             <h3>Copiar e Colcar</h3>
             <p>Aprenda a copiar e colar textos, imagens e links no navegador com o computador.</p>
             <hr> 
@@ -270,34 +280,61 @@
             <button name="btn1"onclick="abrirPDF('Copiar e Colar.pdf')">Abrir PDF</button></div> 
 
 
-            <div class="card"> <img src="https://picsum.photos/300/200?random=12" />
+            <div class="card"> <img src="fotoFonte.png" />
             <h3>Aumentar o tamanho da letra</h3>
             <p>Aprenda a aumentar o tamanho da fonte dos sites, documentos e texto para poder facilitar a leitura.</p><hr>
             <label for="btn2">Clique no botão para abrir o pdf</label><br> 
             <button name="btn2"onclick="abrirPDF('Como Aumentar o Tamanho da Letra.pdf')">Abrir PDF</button> </div>
             
-            <div class="card"> <img src="https://picsum.photos/300/200?random=13" />
-            <h3>Card 3</h3>
-            <p>Mais uma descrição.</p><hr>
+            <div class="card"> <img src="fotoWindows.PNG" />
+            <h3>Tirar uma print com a ferramenta de captura</h3>
+            <p>Aprenda a tirar prints de locais exatos da tela do computador.</p><hr>
             <label for="btn3">Clique no botão para abrir o pdf</label><br>
-            <button name="btn3"onclick="abrirPDF('arquivo3.pdf')">Abrir PDF</button> </div>
+            <button name="btn3"onclick="abrirPDF('Cortar uma imagem.pdf')">Abrir PDF</button> </div>
             
-            <div class="card"> <img src="https://picsum.photos/300/200?random=14" />
-            <h3>Card 4</h3>
-            <p>Mais uma descrição.</p><hr>
+            <div class="card"> <img src="fotoWindows.PNG" />
+            <h3>Como criar uma pasta no computador</h3>
+            <p>Aprenda a criar pastas para organizar seus documentos no computador.</p><hr>
             <label for="btn4">Clique no botão para abrir o pdf</label><br>
-            <button name="btn4"onclick="abrirPDF('arquivo4.pdf')">Abrir PDF</button> </div> 
-            <div class="card"> <img src="https://picsum.photos/300/200?random=15" />
-            <h3>Card 5</h3> 
-            <p>Mais uma descrição.</p><hr> 
-            <label for="btn5">Clique no botão para abrir o pdf</label><br> 
-            <button name="btn5" onclick="abrirPDF('arquivo5.pdf')">Abrir PDF</button> </div>
+            <button name="btn4"onclick="abrirPDF('Criação de pastas.pdf')">Abrir PDF</button> </div> 
 
-            <div class="card"> <img src="https://picsum.photos/300/200?random=15" /> 
-            <h3>Card 6</h3> 
-            <p>Mais uma descrição.</p><hr> 
-            <label for="btn6">Clique no botão para abrir o pdf</label><br> 
-            <button name="btn6" onclick="abrirPDF('arquivo6.pdf')">Abrir PDF</button> </div>
+            <div class="card"> <img src="fotoWindows.PNG" />
+            <h3>Como compactar arquivos zip</h3> 
+            <p>Como compactar arquivos zip, assim é possível enviar arquivos grandes por whatsapp, BlackBoard e etc...</p><hr> 
+            <label for="btn5">Clique no botão para abrir o pdf</label><br> 
+            <button name="btn5" onclick="abrirPDF('Compactar Arquivos.pdf')">Abrir PDF</button> </div>
+        </section>
+
+
+        <section id="manuais">
+          <div class="texto">
+            <h2>Guias</h2>
+            <p>Veja aqui pdfs maiores, explicando problemas, uso de ferramentas e sistemas operacionais.</p>
+          </div>
+        <!-- Cards Manuais -->
+        <section class="cards-container"> <div class="card">
+            <img src="fotoWindows.PNG" />
+            <h3>Guia de uso básico Windows</h3>
+            <p>Aprenda a usar as 3 ferramentas mais básicas do windows.</p>
+            <hr> 
+            <label for="btn1">Clique no botão para abrir o pdf</label><br> 
+            <button name="btn1"onclick="abrirPDF('GuiaWindows.pdf')">Abrir PDF</button></div> 
+
+
+            <div class="card"> <img src="fotoFigma.png" />
+            <h3>Entendendo a interface do Figma</h3>
+            <p>Conheca e entenda a interface do figma com explicação das principais ferramentas.</p><hr>
+            <label for="btn2">Clique no botão para abrir o pdf</label><br> 
+            <button name="btn2"onclick="abrirPDF('GuiaFigma.pdf')">Abrir PDF</button> </div>
+
+            <div class="card"> <img src="fotoCardferramentasDia.PNG" />
+            <h3>Ferramentas para o dia a dia</h3>
+            <p>Aprenda a usar ferramentas do dia a dia, edição de documentos, planilhas e imagens.</p><hr>
+            <label for="btn2">Clique no botão para abrir o pdf</label><br> 
+            <button name="btn2"onclick="abrirPDF('Aplicações gratuitas.pdf')">Abrir PDF</button> </div>
+
+            
+
         </section>
     </div>
   <script>
